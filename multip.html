@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+</head>
+<body>
+   <!-- MY OWN WORK -->
+   <table border="1" align="center">
+      <tr>
+         <td colspan="2">MULTIPLICATION TABLE GENERATOR</td>
+      </tr>
+       <tr>
+  <td colspan="2" align="center"><input type="number" id="block" placeholder="enterblock"></td>
+</tr> 
+<tr>
+  <td colspan="2" align="center"><input type="number" id="line" placeholder="enterline"><br></td>
+</tr>
+   <tr>
+      <td colspan="2" align="center">
+<div>
+  <select name="" id="sel">
+     <option value="*">Multiplication</option>
+     <option value="-">Subtraction</option>
+     <option value="+">Addition</option>
+     <option value="/">Division</option>
+  </select></div>
+</td></tr>
+<tr>
+<td colspan="2"><input type="text" placeholder="Start from" id="start"></td>
+</tr>
+  <tr>
+  <td><button onclick="nice()" >GET ARITHMETIC MULTIPLICATION</button></td>
+</tr>
+</table>
+<div id="peace" align="center"></div>
+  <script>
+    function nice(){
+       t='';
+       var v1 = parseInt(block.value)
+       var v2 = parseInt(line.value)
+       var v3 = parseInt(start.value)
+       v1 += v3;
+       v1 --;
+       var i =v3
+       t+='<table border=1><tr>'
+       while(i<=v2){
+          i++
+      // for (let i = v3; i<=v1; i++){
+         t+= '<td>' +i+ 'Times';
+         t+= '<table border=1>'
+         var j=0
+         while(j<=v2){
+            j++
+            // for (let j = 1; j <= v2; j++){
+               let ans = eval(j+sel.value+i)
+               t+= '<tr><td>' + i+ sel.value +j + '=' + ans + '</td></tr>'
+                }
+         t+= '</table></td>';
+             }
+             '</tr></table>'
+                peace.innerHTML =t
+     }
+  </script>
+</body>
+</html>
